@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Scientific Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            /* Soft gradient to create a pleasant background */
+            background: linear-gradient(135deg, #8af9f1, #f1e1e1);
+            font-family: 'Arial', sans-serif;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0; /* Start invisible */
+            }
+            to {
+                opacity: 1; /* Fade in to visible */
+            }
+        }
+
+        .calculator {
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+            background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+            backdrop-filter: blur(15px); /* Frosted glass effect */
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            width: 90%;
+            max-width: 400px;
+            padding: 15px;
+            overflow: hidden;
+        }
+
+        .display {
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque display */
+            color: #000; /* Text color for display */
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            border: 2px solid rgba(0, 0, 0, 0.2);
+            transition: font-size 0.3s, background-color 0.3s;
+        }
+
+        .display:hover {
+            background-color: rgba(255, 255, 255, 1); /* Change on hover */
+        }
+
+        .button {
+            font-size: 20px;
+            padding: 15px;
+            margin: 5px;
+            background: rgba(255, 255, 255, 0.7); /* Button background */
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer; /* Pointer on hover */
+            transition: transform 0.1s; /* Smooth transformation */
+            flex: 1; /* Flex-grow for buttons */
+            animation: buttonFadeIn 0.5s ease; /* Fade-in effect for buttons */
+        }
+
+        @keyframes buttonFadeIn {
+            0% {
+                opacity: 0; /* Start invisible */
+            }
+            100% {
+                opacity: 1; /* Fade in to visible */
+            }
+        }
+
+        .button:hover {
+            background: rgba(255, 255, 255, 0.85); /* Change on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        .button:active {
+            transform: scale(0.95); /* Shrink on click */
+        }
+
+        .operator {
+            background: rgba(255, 150, 150, 0.7); /* Distinct operator button color */
+        }
+
+        .operator:hover {
+            background: rgba(255, 150, 150, 0.85); /* Change on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        .row {
+            display: flex; /* Flex layout for rows */
+        }
+
+        .double {
+            flex: 2; /* Double width for specific buttons */
+        }
+
+        @media (max-width: 400px) {
+            .calculator {
+                width: 100%; /* Ensure calculator is responsive */
+            }
+
+            .display {
+                font-size: 14px; /* Adjust font size for smaller screens */
+            }
+
+            .button {
+                font-size: 18px; /* Adjust button size for smaller screens */
+                padding: 12px; /* Adjust padding */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="display">
+            <span class="display-text">Float | DEG</span>
+        </div>
+        <div class="row">
+            <button class="button double">√</button>
+            <button class="button">SHIFT</button>
+            <button class="button">RCL</button>
+            <button class="button">STO</button>
+        </div>
+        <div class="row">
+            <button class="button">FSE</button>
+            <button class="button">MR</button>
+            <button class="button">M+</button>
+            <button class="button operator">÷</button>
+        </div>
+        <div class="row">
+            <button class="button">sin⁻¹</button>
+            <button class="button">sin</button>
+            <button class="button">cos</button>
+            <button class="button operator">x</button>
+        </div>
+        <div class="row">
+            <button class="button">tan⁻¹</button>
+            <button class="button">tan</button>
+            <button class="button">log</button>
+            <button class="button operator">-</button>
+        </div>
+        <div class="row">
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="button operator">+</button>
+        </div>
+        <div class="row">
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="button operator">AC</button>
+        </div>
+        <div class="row">
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="button operator">=</button>
+        </div>
+        <div class="row">
+            <button class="button double">0</button>
+            <button class="button">.</button>
+        </div>
+    </div>
+</body>
+
+</html>
